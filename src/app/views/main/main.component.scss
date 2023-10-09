@@ -1,0 +1,104 @@
+@font-face {
+  font-family: Arial;
+  src: url("../../../assets/fonts/ArialMT.ttf");
+}
+
+@font-face {
+  font-family: ArialBold;
+  src: url("../../../assets/fonts/Arial-BoldMT.ttf");
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #F8F9FA;
+  font-weight: 400;
+}
+
+
+.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: auto;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.accordion-button::after{
+  background-image: url("../../../assets/icon/vector2.png");
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url("../../../assets/icon/vector2.png");
+}
+
+.order-info{
+  display: none;
+}
+
+@media screen and (max-width: 1440px) {
+
+  .questions .container {
+    margin: 0 auto;
+  }
+
+}
+
+@media screen and (max-width: 1220px) {
+  .card .card-text {
+    height: 72px;
+  }
+  .title{
+    font-size: 30px!important;
+    margin-bottom: 30px!important;
+  }
+  .text{
+    margin-bottom: 30px!important;
+  }
+
+}
+
+@media screen and (max-width: 780px) {
+  .questions .col-8 {
+    width: 100%;
+  }
+  .slick-prev.slick-arrow,
+  .slick-next.slick-arrow{
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media screen and (max-width: 775px) {
+  .title{
+    font-size: 20px!important;
+  }
+}
+
+@media screen and (max-width: 520px){
+  .text{
+    font-size: 14px;
+  }
+  .title{
+    font-size: 20px!important;
+  }
+  .btn-text{
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 465px){
+  .title{
+    font-size: 15px!important;
+    margin-bottom: 20px!important;
+  }
+
+  .text{
+    font-size: 10px;
+    margin-bottom: 20px!important;
+  }
+
+  .title-2{
+    font-size: 20px!important;
+  }
+}

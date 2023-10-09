@@ -1,0 +1,128 @@
+<section class="order">
+  <div class="container text-center wow animate__backInRight">
+
+    <div id="order-info" class="order-info fw-bold text-center m-5 fs-2 title-2">
+      Мы свяжемся с вами в ближайшее время!
+    </div>
+    <h2 class="fw-bold text-center m-5 fs-2 title-2" id="orderStatus">Сделать заказ</h2>
+    <div class="row justify-content-center" id="order">
+      <div class="col-mb-6 col-lg-6">
+
+
+        <form [formGroup]="signInForm" class="row g-3 needs-validation" method="get" id="orderForm" novalidate>
+          <div class="col-md-4 text-start">
+            <label for="validationCustom01" class="form-label"
+                   [class]="{'text-danger' :signInForm.get('name')?.invalid && (signInForm.get('name')?.dirty || signInForm.get('name')?.touched)}">Имя</label>
+            <input type="text" class="form-control form " id="validationCustom01"
+                   formControlName="name"
+                   [class]="{'border-danger': signInForm.get('name')?.invalid && (signInForm.get('name')?.dirty || signInForm.get('name')?.touched)}"
+                   value="" required>
+            <div class="valid-feedback"
+                 [class]="{'d-block' :signInForm.get('name')?.invalid && (signInForm.get('name')?.dirty || signInForm.get('name')?.touched)}">
+              Имя может содержать только буквы и не может быть пустым
+            </div>
+          </div>
+
+          <div class="col-md-4 text-start">
+            <label for="validationCustom02" class="form-label"
+                   [class]="{'text-danger' :signInForm.get('last_name')?.invalid && (signInForm.get('last_name')?.dirty || signInForm.get('last_name')?.touched)}">Фамилия</label>
+            <input type="text" class="form-control form" id="validationCustom02"
+                   formControlName="last_name"
+                   [class]="{'border-danger': signInForm.get('last_name')?.invalid && (signInForm.get('last_name')?.dirty || signInForm.get('last_name')?.touched)}"
+                   value="" required>
+            <div class="valid-feedback"
+                 [class]="{'d-block' :signInForm.get('last_name')?.invalid && (signInForm.get('last_name')?.dirty || signInForm.get('last_name')?.touched)}">
+              Фамилия может содержать только буквы и не может быть пустым
+            </div>
+          </div>
+
+          <div class="col-md-4 text-start">
+            <label for="validationCustom03" class="form-label"
+                   [class]="{'text-danger' :signInForm.get('mobile')?.invalid && (signInForm.get('mobile')?.dirty || signInForm.get('mobile')?.touched)}">Телефон</label>
+            <input type="tel" class="form-control phone" id="validationCustom03"
+                   formControlName="phone"
+                   [class]="{'border-danger': signInForm.get('phone')?.invalid && (signInForm.get('phone')?.dirty || signInForm.get('phone')?.touched)}"
+                   value="" required>
+            <div class="valid-feedback"
+                 [class]="{'d-block' :signInForm.get('phone')?.invalid && (signInForm.get('phone')?.dirty || signInForm.get('phone')?.touched)}">
+              Телефон должен может содержать не менее 9 цифр и не более 11 и не может быть пустым
+            </div>
+          </div>
+
+          <div class="col-md-6 text-start">
+            <label for="validationCustom04" class="form-label form"
+                   [class]="{'text-danger' :signInForm.get('country')?.invalid && (signInForm.get('country')?.dirty || signInForm.get('country')?.touched)}">Страна</label>
+            <input type="text" class="form-control" id="validationCustom04"
+                   formControlName="country"
+                   [class]="{'border-danger': signInForm.get('country')?.invalid && (signInForm.get('country')?.dirty || signInForm.get('country')?.touched)}"
+                   value="" required>
+            <div class="valid-feedback"
+                 [class]="{'d-block' :signInForm.get('country')?.invalid && (signInForm.get('country')?.dirty || signInForm.get('country')?.touched)}">
+              Страна может содержать только буквы и не может быть пустым
+            </div>
+          </div>
+
+          <div class="col-md-6 text-start">
+            <label for="validationCustom05" class="form-label index1"
+                   [class]="{'text-danger' :signInForm.get('zip')?.invalid && (signInForm.get('zip')?.dirty || signInForm.get('zip')?.touched)}">Индекс</label>
+            <input type="text" class="form-control" id="validationCustom05" maxlength="6"
+                   formControlName="zip"
+                   [class]="{'border-danger': signInForm.get('zip')?.invalid && (signInForm.get('zip')?.dirty || signInForm.get('zip')?.touched)}"
+                   value="" required>
+            <div class="valid-feedback"
+                 [class]="{'d-block' :signInForm.get('zip')?.invalid && (signInForm.get('zip')?.dirty || signInForm.get('zip')?.touched)}">
+              Индекс может содержать только цифры и не может быть пустым
+            </div>
+          </div>
+
+          <div class="col-md-12 text-start">
+            <label for="validationCustom06" class="form-label"
+                   [class]="{'text-danger' :signInForm.get('address')?.invalid && (signInForm.get('address')?.dirty || signInForm.get('address')?.touched)}">Адрес</label>
+            <input type="text" class="form-control" id="validationCustom06"
+                   formControlName="address"
+                   [class]="{'border-danger': signInForm.get('address')?.invalid && (signInForm.get('address')?.dirty || signInForm.get('address')?.touched)}"
+                   value="" required>
+            <div class="valid-feedback"
+                 [class]="{'d-block' :signInForm.get('address')?.invalid && (signInForm.get('address')?.dirty || signInForm.get('address')?.touched)}">
+              Адрес не может содержать спецсимволы или быть пустым
+            </div>
+          </div>
+
+          <div class="col-md-12 text-start">
+            <label for="validationCustom06" class="form-label">Товар</label>
+            <input type="text" class="form-control" id="validationCustom07" [readOnly]="true"
+                   formControlName="product"
+                   value="" required>
+          </div>
+
+          <div class="col-md-12 text-start">
+            <label for="validationCustom06" class="form-label">Комментарий к заказу</label>
+            <input type="text" class="form-control" id="validationCustom08"
+                   formControlName="comment"
+                   value="" required>
+          </div>
+
+          <div class="col-12 text-start mb-5">
+            <a class="hvr-grow open-popup-link">
+              <button class="btn btn-primary order-btn" id="btn" type="submit" (click)="signIn()"
+                      [class]="{'disabled': signInForm.get('name')?.invalid && (signInForm.get('name')?.dirty || signInForm.get('name')?.touched) ||
+                      (signInForm.get('last_name')?.invalid && (signInForm.get('last_name')?.dirty ||
+                       signInForm.get('last_name')?.touched) || signInForm.get('phone')?.invalid && (signInForm.get('phone')?.dirty ||
+                        signInForm.get('phone')?.touched) ||
+                         signInForm.get('country')?.invalid && (signInForm.get('country')?.dirty ||
+                          signInForm.get('country')?.touched) ||
+                           signInForm.get('zip')?.invalid && (signInForm.get('zip')?.dirty ||
+                            signInForm.get('zip')?.touched) ||
+                            signInForm.get('address')?.invalid && (signInForm.get('address')?.dirty ||
+                             signInForm.get('address')?.touched))}">
+                Отправить
+              </button>
+            </a>
+          </div>
+        </form>
+
+
+      </div>
+    </div>
+  </div>
+</section>

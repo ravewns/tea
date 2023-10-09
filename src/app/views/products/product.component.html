@@ -1,0 +1,24 @@
+<section class="cards">
+  <div class="container">
+    <h1 class=" text-center my-5 fw-bold fs-2 title-2">Чайная коллекция</h1>
+    <div class="container">
+      <div class="row row-cols-1 row-cols-md-4 row-cols-ms-3 g-3 justify-content-center">
+
+        <div class="col-lg-4">
+          <div class="card" style="width: 400px;">
+            <a href="{{tea.image}}" class="card-image">
+              <img src="{{tea.image}}" class="card-img-top" alt="Изображение 1"></a>
+            <div class="card-body">
+              <h5 class="card-title fw-bold">{{tea.title}}</h5>
+              <p class="card-text">{{tea.description | TextPerfect}}</p>
+              <p class="card-text">Цена: {{tea.price}}р</p>
+              <a class="hvr-grow card-image btn btn-primary" (click)="goToOrder(tea.title)">Купить</a>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</section>
