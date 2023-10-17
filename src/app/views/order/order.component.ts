@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {validator} from "../../components/common/validators/validator";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Params} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
-import {postService} from "../../service/post.service";
+import {orderPost} from "../../service/order-post";
 
 @Component({
   selector: 'app-order',
@@ -25,18 +25,18 @@ export class OrderComponent implements OnInit {
     comment: new FormControl('')
   })
 
-  constructor(private activatedRoute: ActivatedRoute, public http: HttpClient, private postService: postService) {
+  constructor(private activatedRoute: ActivatedRoute, public http: HttpClient, private postService: orderPost) {
   }
 
   ngOnInit() {
-    this.activatedRoute.queryParams.subscribe((params) => {
+    this.activatedRoute.queryParams.subscribe((params: Params) => {
       if (params['tea']) {
         this.signInForm.get('product')?.setValue(params['tea']);
       }
     });
   }
 
-  signIn() {
+  order() {
     let body = {
       name: this.signInForm.get('name')?.value,
       last_name: this.signInForm.get('last_name')?.value,

@@ -9,7 +9,7 @@
       <div class="col-mb-6 col-lg-6">
 
 
-        <form [formGroup]="signInForm" class="row g-3 needs-validation" method="get" id="orderForm" novalidate>
+        <form [formGroup]="signInForm" (ngSubmit)="order()" class="row g-3 needs-validation" method="get" id="orderForm" novalidate>
           <div class="col-md-4 text-start">
             <label for="validationCustom01" class="form-label"
                    [class]="{'text-danger' :signInForm.get('name')?.invalid && (signInForm.get('name')?.dirty || signInForm.get('name')?.touched)}">Имя</label>
@@ -104,17 +104,8 @@
 
           <div class="col-12 text-start mb-5">
             <a class="hvr-grow open-popup-link">
-              <button class="btn btn-primary order-btn" id="btn" type="submit" (click)="signIn()"
-                      [class]="{'disabled': signInForm.get('name')?.invalid && (signInForm.get('name')?.dirty || signInForm.get('name')?.touched) ||
-                      (signInForm.get('last_name')?.invalid && (signInForm.get('last_name')?.dirty ||
-                       signInForm.get('last_name')?.touched) || signInForm.get('phone')?.invalid && (signInForm.get('phone')?.dirty ||
-                        signInForm.get('phone')?.touched) ||
-                         signInForm.get('country')?.invalid && (signInForm.get('country')?.dirty ||
-                          signInForm.get('country')?.touched) ||
-                           signInForm.get('zip')?.invalid && (signInForm.get('zip')?.dirty ||
-                            signInForm.get('zip')?.touched) ||
-                            signInForm.get('address')?.invalid && (signInForm.get('address')?.dirty ||
-                             signInForm.get('address')?.touched))}">
+              <button class="btn btn-primary order-btn" id="btn" type="submit"
+                     [disabled]="signInForm.invalid || signInForm.disabled">
                 Отправить
               </button>
             </a>

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {CartType} from "../../../../types/cart.type";
+import {orderGet} from "../../../../service/order-get"
 
 @Component({
   selector: 'app-catalog',
@@ -9,14 +10,10 @@ import {CartType} from "../../../../types/cart.type";
 })
 export class CatalogComponent implements OnInit {
   teas: CartType[] = [];
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private getService: orderGet) {
 
   }
-
   ngOnInit() {
-    this.http.get('https://testologia.site/tea')
-      .subscribe((data: any) => {
-        this.teas = data;
-      })
+    this.getService.getTea().subscribe((data:any) => this.teas = data);
   }
 }

@@ -4,13 +4,14 @@ import {HttpClient} from "@angular/common/http";
 @Injectable({
   providedIn: 'root'
 })
-export class postService {
+export class orderPost {
+  constructor(private http: HttpClient) {
 
-  constructor(private http: HttpClient) { }
+  }
 
   sendPost(json: string) {
     return this.http.post<{ success: boolean, message?:string }>('https://testologia.site/order-tea', json)
-      .subscribe( response => {
+      .subscribe( (response: {success: boolean, message?: string | undefined}) => {
         if (response.success && !response.message) {
           document.getElementById('orderForm')!.style.display = 'none';
           document.getElementById('orderStatus')!.innerText = 'Спасибо за заказ!';

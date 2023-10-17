@@ -8,7 +8,6 @@ import {map, Observable, retry} from "rxjs";
 })
 export class CatalogCartService {
 
-
   constructor(private http: HttpClient) {
   }
 
